@@ -1,1 +1,1 @@
-window.alert('welcome to home page')
+// window.alert('welcome to home page')

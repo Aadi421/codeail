@@ -1,9 +1,25 @@
 module.exports.profile = (req, res) => {
-    return res.send("<h1>users profile</h1> ");
-}
-module.exports.news = (req, res) => {
-    return res.send("<h1>users news</h1> ");
-}
-module.exports.feed = (req, res) => {
-    return res.send("<h1>users feed</h1> ");
-}
+    return res.render('user_profile', {
+        title: '/profile',
+    })
+};
+//render the sign in page
+module.exports.signIn = (req, res) => {
+    return res.render('user_sign_in', {
+        title: '/signIn',
+    })
+};
+//render the sign up page
+module.exports.signUp = (req, res) => {
+    return res.render('user_sign_up', {
+        title: '/signUp',
+    })
+};
+//get the signUp data
+module.exports.createUser = (req, res) => {
+    //todo later
+};
+//get the signIn data
+module.exports.createSession = (req, res) => {
+    //todo later
+};
