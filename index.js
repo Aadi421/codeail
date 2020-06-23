@@ -3,11 +3,16 @@ const port = 8000;
 const app = express();
 const expressLayouts = require('express-ejs-layouts')
 const db = require('./config/mongoose')
-    //By default 'layout.ejs' is used. If you want to specify your custom layout (e.g. 'layouts/layout.ejs'), just set layout property in express app settings.
-    // app.set('layout', 'layouts/layout');
+const cookieParser = require('cookie-parser');
+
+
+//By default 'layout.ejs' is used. If you want to specify your custom layout (e.g. 'layouts/layout.ejs'), just set layout property in express app settings.
+// app.set('layout', 'layouts/layout');
+// where is url encode in this file in this file index.js show urlencoded  
+app.use(express.urlencoded());
 app.use(expressLayouts);
 
-
+app.use(cookieParser());
 app.use(express.static('assests'));
 //extract style and scripts from sub page into the layout
 app.set('layout extractStyles', true);
