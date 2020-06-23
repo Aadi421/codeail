@@ -8,5 +8,7 @@ router.get('/sign-up', userController.signUp);
 
 
 router.post('/create', userController.create);
+router.post('/create-session', userController.createSession);
+router.get('/remove-cookie', userController.removeCookie);
 
 module.exports = router;
