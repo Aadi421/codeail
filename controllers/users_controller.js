@@ -6,12 +6,21 @@ module.exports.profile = (req, res) => {
 };
 //render the sign in page
 module.exports.signIn = (req, res) => {
+    if (req.isAuthenticated()) {
+        return res.redirect('/users/profile')
+    }
     return res.render('user_sign_in', {
         title: '/signIn',
     })
 };
 //render the sign up page
 module.exports.signUp = (req, res) => {
+    if (req.isAuthenticated()) {
+        return res.redirect('/users/profile')
+    }
+
+
+
     return res.render('user_sign_up', {
         title: '/signUp',
     })
@@ -43,4 +52,10 @@ module.exports.create = (req, res) => {
 //get the signIn data
 module.exports.createSession = (req, res) => {
     //todo later
+    return res.redirect('/');
+};
+module.exports.destroySession = (req, res) => {
+    //this is give by passport
+    req.logout();
+    return res.redirect('/');
 };
