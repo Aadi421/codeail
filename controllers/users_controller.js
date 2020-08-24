@@ -1,8 +1,13 @@
 const User = require('../models/user');
 module.exports.profile = (req, res) => {
-    return res.render('user_profile', {
-        title: '/profile',
-    })
+
+    User.findById(req.params.id,function(err,user){
+        return res.render('user_profile', {
+            title: '/profile',
+            profile_user:user,
+    });
+    
+    });
 };
 //render the sign in page
 module.exports.signIn = (req, res) => {
