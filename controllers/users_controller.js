@@ -9,6 +9,17 @@ module.exports.profile = (req, res) => {
     
     });
 };
+
+
+module.exports.update=(req,res)=>{
+    if(req.user.id==req.params.id){
+        User.findByIdAndUpdate(req.params.id,req.body,function(err,user){
+            return res.redirect('back');
+        });
+    }else{
+        return res.status(401).send('Unautherised')
+    }
+}
 //render the sign in page
 module.exports.signIn = (req, res) => {
     if (req.isAuthenticated()) {
