@@ -1,1 +1,0 @@
-// window.alert('welcome to home page')
