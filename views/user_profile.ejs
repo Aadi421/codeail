@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="/css/user_profile.css">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <div id="profile-container">
-        <img src="<%=user.avatar%>" alt="<%=user.name%>" width='100'>
+        <img src="<%=user.avatar%>" alt="<%=user.name%>" width='100' id="previewImg">
 
 
         <%if(user.id==profile_user.id){%>
@@ -9,7 +10,7 @@
             <input type="text" name="name" value="<%=profile_user.name%>" placeholder="Your Name" required>
             <input type="email" name="email" value="<%=profile_user.email%>" placeholder="Your email" required>
 
-            <input type="file" name="avatar" placeholder="profile Picture">
+            <input type="file" name="avatar" placeholder="profile Picture" onchange="previewFile(this);">
             <input type="submit" value="Update">
 
             </form>
@@ -19,5 +20,20 @@
             <p><%= profile_user.email %></p>
         <%}%>
 </div>
+<script>
+    function previewFile(input){
+        var file = $("input[type=file]").get(0).files[0];
+ 
+        if(file){
+            var reader = new FileReader();
+ 
+            reader.onload = function(){
+                $("#previewImg").attr("src", reader.result);
+            }
+ 
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
 
 
