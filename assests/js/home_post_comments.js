@@ -38,7 +38,7 @@ class PostComments{
 
                     new Noty({
                         theme: 'relax',
-                        text: "Comment published",
+                        text: "Comment published!",
                         type: 'success',
                         layout: 'topRight',
                         timeout: 1500
