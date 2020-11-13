@@ -82,7 +82,7 @@
                     $(`#post-${data.data.post_id}`).remove();
                     new Noty({
                         theme: 'relax',
-                        text: "Post Deleted",
+                        text: "Post And Related Commment Deleted Successfully",
                         type: 'success',
                         layout: 'topRight',
                         timeout: 1500

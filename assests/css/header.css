@@ -1,7 +1,11 @@
+#layout-header {
+  width: 100vw;
+}
+
 #layout-header nav {
   display: flex;
   justify-content: space-between;
-  padding: 0 10px;
+  padding: 10px 30px;
   background: #2196f3;
   color: white;
   box-shadow: 1px 1px 1px 1px lightgrey;
@@ -21,6 +25,11 @@
 
 #layout-header nav .auth-links ul li {
   margin-right: 10px;
+}
+
+#layout-header nav .auth-links ul li a {
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
 #layout-header nav a {

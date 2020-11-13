@@ -87,7 +87,7 @@ class PostComments{
 
                     new Noty({
                         theme: 'relax',
-                        text: "Comment Deleted",
+                        text: "Comment Deleted Successfully",
                         type: 'success',
                         layout: 'topRight',
                         timeout: 1500
