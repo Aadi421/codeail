@@ -1,9 +1,7 @@
 const nodemailer = require("nodemailer");
+const ejs = require('ejs');
+const path = require('path')
 
-// async..await is not allowed in global scope, must use a wrapper
-module.exports.nodemailer=async ()=>{
-  
-try{
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
     service:'gmail',
@@ -13,12 +11,26 @@ try{
     auth: {
       user: 'adts625@gmail.com', // generated ethereal user
       pass: 'Aadi@764', // generated ethereal password
-      },
+          },
      });
-    }catch(err){
-    console.log(err,'error in creating nodemailer');
-    return;
-       };
 
-  }
 
+let renderTemplate = (data, relativePath) => {
+  let mailHTML;
+  ejs.renderFile(
+      path.join(__dirname, '../views/mailers', relativePath),
+      data,
+      function(err, template){
+       if (err){console.log('error in rendering template', err); return}
+       
+       mailHTML = template;
+      }
+  )
+
+  return mailHTML;
+}
+
+module.exports = {
+  transporter: transporter,
+  renderTemplate: renderTemplate
+}

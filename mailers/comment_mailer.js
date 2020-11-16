@@ -1,23 +1,23 @@
-const nodemailer = require("../config/nodemailer");
+const nodeMailer = require("../config/nodemailer");
 
-module.exports.newComment=async (comment)=> {
-    try{
-        console.log(comment);
+module.exports.newComment=(comment) => {
+    
+  console.log(comment);
+  console.log('inside mailers');
+   
+   let htmlString=nodeMailer.renderTemplate({comment:comment},'/comments/new_comment.ejs');
   // send mail with defined transport object
-  let info = await transporter.sendMail({
+ nodeMailer.transporter.sendMail({
     from: 'adarshchaudhary434@gmail.com', // sender address
     to:comment.user.email, // list of receivers
-    subject: "comment published", // Subject line
-    text: "Hello world?", // plain text body
-    html: "<b>Hello world?</b>", // html body
-  });
-
-  console.log("Message sent: %s", info.messageId);
-  // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-}catch(err){
-    console.log(err,'error in sending mail');
-    return;
-}
-
+    subject: "comment published!",// Subject line
+    // text: "Hello world?", // plain text body
+    html:htmlString, // html body
+ },(err,info) =>
+    {
+      if(err){console.log(err,'error in sending mails'); return}
+      console.log('message sent',info);
+      return;
+    });
 }
 
