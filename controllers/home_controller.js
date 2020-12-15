@@ -5,7 +5,7 @@ module.exports.home = async (req, res) => {
     // console.log(req.cookies);
     // res.cookie('user_id ', 11)
 try{
-    // populate the user of each post
+    //CHANGE :: populate the user of each post
    let posts=await Post.find({})
    .sort('-createdAt')
    .populate('user')
@@ -13,8 +13,11 @@ try{
        path:'comments',
        populate:{
            path:'user'
+       },
+       populate:{
+           path:'likes'
        }
-   });
+   }).populate('likes');
    
    let users=await  User.find({});
 

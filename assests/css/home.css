@@ -1,5 +1,6 @@
 #home-container {
   display: flex;
+  margin-bottom: 50px;
 }
 
 #home-container #feed-posts {
