@@ -5,20 +5,6 @@ mongoose.connect(process.env.MONGODB_URI || process.env.MONGOHQ_URL || process.e
     useCreateIndex: true,
     useFindAndModify: false,
     useUnifiedTopology: true,
-    TopologyDescription:{
-                        type: 'Single',
-                        setName: null,
-                        maxSetVersion: null,
-                        maxElectionId: null,
-                        
-                        stale: false,
-                        compatible: true,
-                        compatibilityError: null,
-                        logicalSessionTimeoutMinutes: null,
-                        heartbeatFrequencyMS: 10000,
-                        localThresholdMS: 15,
-                        commonWireVersion: null
-                        }
                         
       
 });
