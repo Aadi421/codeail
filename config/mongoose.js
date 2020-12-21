@@ -5,6 +5,21 @@ mongoose.connect(process.env.MONGODB_URI || process.env.MONGOHQ_URL || process.e
     useCreateIndex: true,
     useFindAndModify: false,
     useUnifiedTopology: true,
+    TopologyDescription:{
+                        type: 'Single',
+                        setName: null,
+                        maxSetVersion: null,
+                        maxElectionId: null,
+                        
+                        stale: false,
+                        compatible: true,
+                        compatibilityError: null,
+                        logicalSessionTimeoutMinutes: null,
+                        heartbeatFrequencyMS: 10000,
+                        localThresholdMS: 15,
+                        commonWireVersion: null
+                        }
+                        
       
 });
 const db = mongoose.connection;
@@ -15,4 +30,18 @@ db.once('open', () => {
 });
 module.exports = db;
 
-// mongoose.connect(process.env.MONGODB_URI || process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://localhost/short_urls');
+// TopologyDescription {
+//  type: 'Single',
+// setName: null,
+//  maxSetVersion: null,
+//  maxElectionId: null,
+//  servers: Map { 'localhost:27017' => [ServerDescription] },
+//  stale: false,
+//  compatible: true,
+// compatibilityError: null,
+// logicalSessionTimeoutMinutes: null,
+//  heartbeatFrequencyMS: 10000,
+//  localThresholdMS: 15,
+//  commonWireVersion: null
+//  }
+//  }
