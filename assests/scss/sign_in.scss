@@ -1,77 +1,106 @@
-body{
-    background-color:#293c54;
-    box-sizing:border-box;
-    #signIn-Container{
-        
-        width:900px;
-        height:650px;
-        // background-color:dodgerblue;
-        margin:auto;
-       
-        display:flex;
-        flex-direction:row;
-        justify-content:center;
-        align-items:center;
-
-        #signIn-message{
-            width:600px;
-            height:600px;
-            background-image:url('../image/1_img.jpg');
-            background-position:center;
-            background-size:cover;
-            opacity:.6;
-
-        }
-        #signIn-tempalte{
-            width:300px;
-            height:600px;
-            background-color:#fbfbfb;
-            h1{
-                text-align:center;
-                color:midnightblue;
-            }
-            form{
-                display:flex;
-                flex-direction:column;
-                justify-content:center;
-                align-items:center;
-                input{
-                    margin:25px 0;
-                    font-size:1.2rem;
-                    color:#293c54;
-                    border:none;
-                    border-bottom:2px solid tomato!important;
-                    border-left:2px solid tomato!important;
+body {
+    background-color: #293c54;
+    box-sizing: border-box;
+    .signin-container {
+        padding: 20px;
+        .signin-content {
+            max-width: 900px;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin: auto;
+            position: relative;
+            top: 40px;
+            background-color: white;
+            padding: 40px;
+            border-radius: 2%;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            .signin-form {
+                width: 350px;
+                position: relative;
+                top: -10px;
+                // background-color:blue;
+                .form-title {
+                    font-size: 2.5rem;
+                    font-weight: bold;
+                    font-family: 'Lato', sans-serif;
+                    color: black;
                 }
-                input[type="submit"]{
-                    background-image:linear-gradient(to bottom right,yellow,red,orange);
-                    font-size:1.4rem;
-                    border:2px solid tomato!important;
-                    color:white;
-                    font-weight:bold;
-                    padding:3px;
-                    font-family:Georgia, serif;
-                }
-
-            }
-            
-             #googleSignLink {
-                    text-align:center;
-                    // color:midnightblue;
-                    
-                    a{
-                        background-image:linear-gradient(to bottom right,yellow,red,orange);
-                        font-size:1.4rem;
-                        border:2px solid tomato!important;
-                        text-decoration:none;
-                        color:white;
-                        font-weight:bold;
-                        padding:5px;
-                         font-family:Georgia, serif;
-
+                .form-group {
+                    border-bottom: 1px solid black;
+                    margin: 20px;
+                    i {
+                        color: blue;
+                        font-size: .9rem;
                     }
+                    .fa-envelope {
+                        font-size: .7rem!important;
+                    }
+                    input {
+                        background-color: none;
+                        outline: none;
+                        font-size: 1.2rem;
+                        padding: 10px;
+                        border: none;
+                    }
+                     ::placeholder {
+                        font-size: .9rem;
+                        color: #293c54;
+                        font-family: 'Lato', sans-serif;
+                    }
+                }
+                .form-button {
+                    border-bottom: none!important;
+                    padding: 15px 0 0 215px;
+                    input[type=submit] {
+                        background-image: linear-gradient(to right, red, orange, yellow, red);
+                        border: 2px solid yellow;
+                        margin: 2px;
+                        border-radius: 2px;
+                        font-size: 1.3rem;
+                        font-weight: bold;
+                        color: #293c54;
+                        font-family: 'Lato', sans-serif;
+                        transition: ease-in;
+                    }
+                    input[type=submit]:hover {
+                        background-image: linear-gradient(to left, red, orange, yellow, red);
+                        // transform: scale(.9);
+                    }
+                }
+                .socials i {
+                    background-image: linear-gradient(to right, red, orange, yellow, red);
+                    border: 2px solid yellow;
+                    margin: 2px;
+                    border-radius: 50%;
+                    font-size: 1.7rem;
+                    padding: 10px;
+                    color: #293c54;
+                }
+                .socials i:hover {
+                    background-image: linear-gradient(to left, red, orange, yellow, red);
+                    // transform: scale(.9);
+                }
+            }
+            .signin-image {
+                width: 450px;
+                img {
+                    width: 375px;
+                    height: 400px;
+                }
+                .signin-image-link {
+                    text-decoration: none!important;
+                    text-align: center;
+                    font-size:1.2rem;
+                    position:relative;
+                    left:10%
+                }
+                .signin-image-link:hover {
+                    color: blue;
+                    
+                }
             }
         }
     }
-
 }

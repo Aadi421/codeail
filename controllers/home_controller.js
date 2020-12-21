@@ -1,6 +1,7 @@
 const Post=require('../models/post');
 const User=require('../models/user');
 
+
 module.exports.home = async (req, res) => {
     // console.log(req.cookies);
     // res.cookie('user_id ', 11)
@@ -33,3 +34,5 @@ try{
 
 
 }
+
+

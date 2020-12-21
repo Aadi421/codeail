@@ -31,13 +31,18 @@ module.exports.update= async (req,res)=>{
 
                 user.name=req.body.name;
                 user.email=req.body.email;
+                user.city=req.body.city;
+                user.address=req.body.address;
+                user.dob=req.body.dob;
+                user.number=req.body.number;
+
                 
                 if(req.file){
 
                     // this replace the avatar with current uploads avatar(it work only if  atleast one previous avatar is availabe)
-                    if(user.avatar){
-                        fs.unlinkSync(path.join(__dirname ,'..',user.avatar));
-                    }
+                    // if(user.avatar){
+                    //     fs.unlinkSync(path.join(__dirname ,'..',user.avatar));
+                    // }
 
                     //this is saving the path of the uploaded file into the avatar field the user 
                     user.avatar=User.avatarPath + '/' + req.file.filename;

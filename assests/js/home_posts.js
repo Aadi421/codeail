@@ -20,6 +20,7 @@
 
                     // CHANGE :: enable the functionality of the toggle like button on the new post
                     new ToggleLike($(' .toggle-like-button', newPost));
+
                     new Noty({
                         theme: 'relax',
                         text: "Post published!",
@@ -39,29 +40,38 @@
 
     // method to create a post in DOM
     let newPostDom = function(post){
-        return $(`<li id="post-${post._id}">
-                    <p>
+        // CHANGE :: show the count of zero likes on this post
+        return $(`<li class="post-list" id="post-${post._id}">
+                    <div class="post-display-conatiner">
+                      <div class="first-child">
+                        <small>
+                            <a class="delete-post-button"  href="/posts/destroy/${ post._id }"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                        </small>
+                      </div>
+                      <div class="last-child">
+                        <p class="content-size">${ post.content }</p>
                         
                         <small>
-                            <a class="delete-post-button"  href="/posts/destroy/${ post._id }">X</a>
+                        <span>Posted By</span> - ${ post.user.name }
                         </small>
-                       
-                        ${ post.content }
                         <br>
                         <small>
-                        ${ post.user.name }
+                        <span>Created At</span> - ${ post.createdAt }
                         </small>
                         <br>
-                            <small>
-                                <% if (locals.user){ %>
-                                    <a class="toggle-like-button" data-likes="0" href="/likes/toggle/?id=${post._id}&type=Post">
-                                            0 Likes
-                               
-                            </small> 
-                    </p>
+                        <small>
+                            
+                                <a class="toggle-like-button" data-likes="0" href="/likes/toggle/?id=${post._id}&type=Post">
+                                    <i class="fa fa-thumbs-up" aria-hidden="true"></i><span>0</span> 
+                                </a>
+                            
+                        </small>
+
+                    </div>
+               </div>
                     <div class="post-comments">
                         
-                            <form id="post-${ post._id }-comments-form" action="/comments/create" method="POST">
+                            <form id="post-${ post._id }-comments-form" class="new-comment-form" action="/comments/create" method="POST">
                                 <input type="text" name="content" placeholder="Type Here to add comment..." required>
                                 <input type="hidden" name="post" value="${ post._id }" >
                                 <input type="submit" value="Add Comment">
@@ -91,7 +101,7 @@
                     $(`#post-${data.data.post_id}`).remove();
                     new Noty({
                         theme: 'relax',
-                        text: "Post And Related Commment Deleted Successfully",
+                        text: "Post Deleted",
                         type: 'success',
                         layout: 'topRight',
                         timeout: 1500

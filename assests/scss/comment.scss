@@ -1,0 +1,46 @@
+.comment-list{
+    list-style-type:none;
+    margin:10px;
+     box-shadow: 1px 1px 1px 1px #eee;
+    .comment-display-conatiner{
+        background-color:white;
+        padding:5px;
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+        .first-child{
+            width:20%;
+            i{
+                font-size:1.1rem;
+                color:black;
+                padding:2px
+            }
+        }
+        .last-child{
+            width:80%;
+            span{
+                font-size:1rem;
+            }
+            a{
+                text-decoration:none;
+                color:blue;
+                
+                i{
+                    font-size:1.1rem;
+                    
+                }
+                span{
+                   font-size:1.1rem; 
+                }
+                
+        
+            }
+            
+            
+            
+            
+        }
+    }
+    
+    
+}

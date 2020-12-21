@@ -1,0 +1,44 @@
+.comment-list {
+  list-style-type: none;
+  margin: 10px;
+  box-shadow: 1px 1px 1px 1px #eee;
+}
+
+.comment-list .comment-display-conatiner {
+  background-color: white;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.comment-list .comment-display-conatiner .first-child {
+  width: 20%;
+}
+
+.comment-list .comment-display-conatiner .first-child i {
+  font-size: 1.1rem;
+  color: black;
+  padding: 2px;
+}
+
+.comment-list .comment-display-conatiner .last-child {
+  width: 80%;
+}
+
+.comment-list .comment-display-conatiner .last-child span {
+  font-size: 1rem;
+}
+
+.comment-list .comment-display-conatiner .last-child a {
+  text-decoration: none;
+  color: blue;
+}
+
+.comment-list .comment-display-conatiner .last-child a i {
+  font-size: 1.1rem;
+}
+
+.comment-list .comment-display-conatiner .last-child a span {
+  font-size: 1.1rem;
+}

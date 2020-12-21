@@ -1,8 +1,11 @@
 body {
   margin: 0;
-  /* text-align: center; */
+  background-color: #292a23;
+  opacity: .7;
 }
 
 body #layout-main {
-  height: 100vh;
+  min-height: 100vh;
+  margin-bottom: 50px;
+  background-color: #292a23;
 }

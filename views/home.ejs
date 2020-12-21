@@ -2,15 +2,23 @@
 
 <div id="home-container">
     <section id="feed-posts">
-            <h4>Posts</h4>
-            <% if(locals.user){ %>
-            <form action="/posts/create" id="new-post-form" method="POST">
-                <textarea name="content" cols="30" rows="3" placeholder="Type Here..." required></textarea>
-                <input type="submit" value="Post">
-            </form>
-            <% } %>
+            <div>
+                    
+                    <% if(locals.user){ %>
+                    <h4> Create Posts</h4>
+                    <form action="/posts/create" id="new-post-form" method="POST">
+                        <textarea name="content" cols="30" rows="3" placeholder="Type Here..." required></textarea>
+                        <input type="submit" value="Post">
+                    </form>
+                    <% }else{%>
+                    
+                    
+                    <h4 class="post-img-text"> For Making Post You Have To Sign In</h>
+                    <%}%>
+            </div>
         
             <div id="posts-list-container">
+                <h4>Posts That Published</h4>
                 <ul>
                     <% for(post of posts){ %>
                         
@@ -23,17 +31,23 @@
         
         
         <section id="user-friends">
-            <h4>Friends</h4>
-            <% for(u of all_users){%>
-                <p>
-                    <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
-                </p>
-            <% } %>
+            <!-- <div>
+                <h4>Friends</h4>    
+            </div> -->
+            <div class="user-section">
+                <h4><i class="fa fa-users" aria-hidden="true"></i>&ensp;Users </h4>
+                    <% for(u of all_users){%>
+                        <p>
+                            <a class="user-name-link" href="/users/profile/<%= u.id %>"><%= u.name %></a>
+                        </p>
+                    <% } %> 
+            </div>
         </section>
+        <%- include('_chat_box') -%>
 </div>
 
 <!-- importing this script for creating the comments -->
-<script src="/js/home_post_comments.js" ></script>
+<script src="/js/home_post_comments.js"></script>
 <script src="/js/home_posts.js"></script>
 
 <!-- CHANGE :: import the script file for toggle likes, also run it over for the already present posts and comments on the page -->
@@ -45,3 +59,10 @@
     });
 </script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+<script src="/js/chat_engine.js"></script>
+<% if (locals.user){ %>
+<script>
+    new ChatEngine('user-chat-box', '<%= locals.user.name %>')
+</script>
+<% } %>

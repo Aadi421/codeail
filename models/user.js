@@ -17,8 +17,29 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    city: {
+        type: String,
+        
+    },
+    address: {
+        type: String,
+        
+    },
+    dob: {
+        type: String,
+        
+    },
+    number: {
+        type: Number,
+        
+    },
     avatar:{
         type:String,
+    },
+
+    friendship:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'Friendship'
     }
 
 }, {

@@ -1,16 +1,87 @@
+@import './post.scss';
+@import './comment.scss';
 #home-container{
     display:flex;
+    align-content:row;
+    justify-content:space-evenly;
     margin-bottom:50px;
+    
     #feed-posts{
         width:70%;
         padding:10px;
+        display:flex;
+        align-content:row;
+        justify-content:space-around;
+        flex-wrap:wrap;
+        #new-post-form{
+                
+            textarea{
+                background-color:#f8f2ed;
+                box-shadow:1px 1px 1px 5px #eee ;
+                
+            }
+
+            input[type=submit] {
+                        background-image: linear-gradient(to right, red, orange, yellow, red);
+                        border: 2px solid orange;
+                        margin: 10px;
+                        border-radius: 2px;
+                        font-size: 1rem;
+                        font-weight: bold;
+                        color: black;
+                        // font-family: 'Lato', sans-serif;
+                        transition: ease-in;
+                    }
+                    input[type=submit]:hover {
+                        background-image: linear-gradient(to left, red, orange, yellow, red);
+                        // transform: scale(.9);
+                    }
+        }
+        
+        .post-img-text{
+            position:relative;
+            top:20%;
+            left:1%;
+            font-size:1.2rem!important;
+        }
+
+        
         
     }
 
     #user-friends{
         width:30%;
-        padding:10px;
+        padding:10px 0 0 20px;
+        
         border-left:1px solid lightgrey;
         height:100%;
+
+        .user-section{
+          
+            .user-name-link{
+                text-decoration:none;
+                color:snow;
+            }
+            :hover{
+                color:blue;
+            }
+            :focus{
+                color:red;
+            }
+            
+        }
+        
     }
+// global scss
+    h4{
+        font-size:1.5rem;
+        font-weight:bold;
+    }
+    .fa-thumbs-up{
+            color:blue;
+    }
+    .fa-thumbs-up:visited{
+             
+            }
+                
 }

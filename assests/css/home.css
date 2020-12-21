@@ -1,16 +1,189 @@
+.post-list {
+  list-style-type: none;
+}
+
+.post-list .post-display-conatiner {
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-shadow: 1px 1px 2px 1px #eee;
+}
+
+.post-list .post-display-conatiner .first-child {
+  width: 20%;
+}
+
+.post-list .post-display-conatiner .first-child i {
+  font-size: 1.3rem;
+  color: black;
+  padding: 2px;
+}
+
+.post-list .post-display-conatiner .last-child {
+  width: 80%;
+}
+
+.post-list .post-display-conatiner .last-child .content-size {
+  font-size: 1.3rem;
+}
+
+.post-list .post-display-conatiner .last-child span {
+  font-size: 1rem;
+}
+
+.post-list .post-display-conatiner .last-child a {
+  text-decoration: none;
+  color: blue;
+}
+
+.post-list .post-display-conatiner .last-child a i {
+  font-size: 1.1rem;
+}
+
+.post-list .post-display-conatiner .last-child a span {
+  font-size: 1.1rem;
+}
+
+.post-list .post-comments .new-comment-form {
+  margin: 10px;
+  position: relative;
+  left: 3%;
+}
+
+.post-list .post-comments .new-comment-form input {
+  background-color: white;
+}
+
+.post-list .post-comments .new-comment-form input[type=submit] {
+  background-image: linear-gradient(to right, red, orange, yellow, red);
+  border: 2px solid orange;
+  padding: 1px;
+  border-radius: 2px;
+  font-size: .8rem;
+  color: black;
+  margin: 5px;
+  transition: ease-in;
+}
+
+.post-list .post-comments .new-comment-form input[type=submit]:hover {
+  background-image: linear-gradient(to left, red, orange, yellow, red);
+}
+
+.comment-list {
+  list-style-type: none;
+  margin: 10px;
+  box-shadow: 1px 1px 1px 1px #eee;
+}
+
+.comment-list .comment-display-conatiner {
+  background-color: white;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.comment-list .comment-display-conatiner .first-child {
+  width: 20%;
+}
+
+.comment-list .comment-display-conatiner .first-child i {
+  font-size: 1.1rem;
+  color: black;
+  padding: 2px;
+}
+
+.comment-list .comment-display-conatiner .last-child {
+  width: 80%;
+}
+
+.comment-list .comment-display-conatiner .last-child span {
+  font-size: 1rem;
+}
+
+.comment-list .comment-display-conatiner .last-child a {
+  text-decoration: none;
+  color: blue;
+}
+
+.comment-list .comment-display-conatiner .last-child a i {
+  font-size: 1.1rem;
+}
+
+.comment-list .comment-display-conatiner .last-child a span {
+  font-size: 1.1rem;
+}
+
 #home-container {
   display: flex;
+  align-content: row;
+  justify-content: space-evenly;
   margin-bottom: 50px;
 }
 
 #home-container #feed-posts {
   width: 70%;
   padding: 10px;
+  display: flex;
+  align-content: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+#home-container #feed-posts #new-post-form textarea {
+  background-color: #f8f2ed;
+  box-shadow: 1px 1px 1px 5px #eee;
+}
+
+#home-container #feed-posts #new-post-form input[type=submit] {
+  background-image: linear-gradient(to right, red, orange, yellow, red);
+  border: 2px solid orange;
+  margin: 10px;
+  border-radius: 2px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+  transition: ease-in;
+}
+
+#home-container #feed-posts #new-post-form input[type=submit]:hover {
+  background-image: linear-gradient(to left, red, orange, yellow, red);
+}
+
+#home-container #feed-posts .post-img-text {
+  position: relative;
+  top: 20%;
+  left: 1%;
+  font-size: 1.2rem !important;
 }
 
 #home-container #user-friends {
   width: 30%;
-  padding: 10px;
+  padding: 10px 0 0 20px;
   border-left: 1px solid lightgrey;
   height: 100%;
+}
+
+#home-container #user-friends .user-section .user-name-link {
+  text-decoration: none;
+  color: snow;
+}
+
+#home-container #user-friends .user-section :hover {
+  color: blue;
+}
+
+#home-container #user-friends .user-section :focus {
+  color: red;
+}
+
+#home-container h4 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#home-container .fa-thumbs-up {
+  color: blue;
 }

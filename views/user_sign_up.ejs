@@ -1,22 +1,42 @@
 <link rel="stylesheet" href="/css/sign_up.css">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css">
-<div id="signUp-Container">
 
-    <div id="signUp-message">
+
         
-    </div>
+        <section class="signup">
+        <div class="signup-container">
+        <div class="signup-content">
 
-   <div id="signUp-tempalte">
-    <h1> Create Account <br><i class="fab fa-google"></i> </h1>
-        <form id="signUp" action="/users/create" method="POST">
-                <input type="text" name="name" placeholder="your name" required><br>
-                <input type="email" name="email" placeholder="your email" required><br>
-                <input type="password" name="password" placeholder="password" required><br>
-                <input type="password" name="confirm_password" placeholder="confirm_password" required><br>
-                <input type="submit" value="Sign Up" title="click here to signUp" >
+            
+            <div class="signup-form">
+                <h2 class="form-title">Sign up</h2>
+                <form method="POST" action="/users/create" class="register-form" id="register-form">
+                    <div class="form-group">
+                        <label for="name"><i class="fa fa-user" aria-hidden="true"></i></label>
+                        <input type="text" name="name" id="name" placeholder="Your Name"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"><i class="fa fa-envelope" aria-hidden="true"></i></label>
+                        <input type="email" name="email" id="email" placeholder="Your Email"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="pass"><i class="fa fa-lock" aria-hidden="true"></i></label>
+                        <input type="password" name="password" id="pass" placeholder="Password"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="re-pass"><i class="fa fa-lock" aria-hidden="true"></i></label>
+                        <input type="password" name="confirm_password" id="re_pass" placeholder="Repeat your password"/>
+                    </div>
 
-        </form>
-        <p id="googleSignLink"><a href="/users/auth/google"  title="click here to google signUp">Google Sign Up</a></p>
-    </div>
-    
-</div>
+                    <div class="form-group form-button">
+                        <input type="submit" value="Sign Up" title="click here to signUp" id="signup" class="form-submit" value="Register"/>
+                    </div>
+                </form>
+            </div>
+            <div class="signup-image">
+                <figure><img src="/image/signup-image.jpg" alt="sing up image"></figure>
+                <a href="/users/sign-in" class="signup-image-link" title="back to sign in page"><span>I am already member</span></a>
+            </div>
+
+        </div>
+        </div>
+        </section>

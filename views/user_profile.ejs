@@ -1,40 +1,102 @@
 <link rel="stylesheet" href="/css/user_profile.css">
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <div id="profile-container">
-        <%if(user.id==profile_user.id){%>
+        <!-- <%if(user.id==profile_user.id){%>
              <img src="<%=user.avatar%>" alt="<%=user.name%>" width='100' id="previewImg">
-        <%}%>
+        <%}%> -->
+                <div class="profile-display-container">
+                            
+                        
+                        
+                        
+                        <span for="Name">Name</span><span><%= profile_user.name %></span>
+                        <span for="Email">Email </span><span><%= profile_user.email %></span>
+                        <span for="Age">DOB </span><span><%= profile_user.dob %></span>
+                        <span for="Address">Address </span><span><%= profile_user.address %></span>
+                        <span for="City">City</span><span><%= profile_user.city %></span>
+                        <span for="Mobile Number">Mobile Number</span><span><%= profile_user.number %></span>
+                        
+                        <span><%if(user.id==profile_user.id){%>
+                              <button  id="myBtn">Update</button>
+                              <%}%>
+                        </span>
+                            
+                </div>
+    <div class="profile-update-container">
+        
+            
+                
 
-        <%if(user.id==profile_user.id){%>
-            <!-- if user matches then show the form -->
-             <form action="/users/update/<%=profile_user.id%>" method="POST" enctype="multipart/form-data">
-            <input type="text" name="name" value="<%=profile_user.name%>" placeholder="Your Name" required>
-            <input type="email" name="email" value="<%=profile_user.email%>" placeholder="Your email" required>
+                <!-- Trigger/Open The Modal -->
+                
 
-            <input type="file" name="avatar" placeholder="profile Picture" onchange="previewFile(this);">
-            <input type="submit" value="Update">
+                <!-- The Modal --> 
+                <div id="myModal" class="modal">
+               
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <!--if user matches then show the form -->
+                        <form action="/users/update/<%=profile_user.id%>" method="POST" enctype="multipart/form-data">
+                                <span for="Name">Name - </span><input type="text" name="name" value="<%=profile_user.name%>" placeholder="Your Name" required><br><br>
+                                <span for="Email">Email - </span><input type="email" name="email" value="<%=profile_user.email%>" placeholder="Your email" ><br><br>
+                                <span for="Age">DOB - </span><input type="date" name="dob" value="<%=profile_user.dob%>" placeholder="Your dob" ><br><br>
+                                <span for="Address">Address - </span><textarea  type="text" name="address" value="<%=profile_user.address%>" placeholder="Your address" rows="2" cols="10"  ></textarea><br><br>
+                                <span for="City">City - </span><input type="text" name="city" value="<%=profile_user.city%>" placeholder="Your city" ><br><br>
+                                <span for="Mobile Number">Mobile Number - </span><input type="tel" name="number" value="<%=profile_user.number%>" placeholder="Your number" ><br>
 
-            </form>
-        <%}else{%>
-            <!-- else show profile enfo -->
-            <p><%= profile_user.name %></p>
-            <p><%= profile_user.email %></p>
-        <%}%>
+                                    <br>
+                                <!-- <input type="file" name="avatar" placeholder="profile Picture" onchange="previewFile(this);"> -->
+                                <input type="submit" value="Update">
+
+                        </form>
+                </div>
+       
+                </div>
+         
+    </div>
+                      
 </div>
-<script>
-    function previewFile(input){
-        var file = $("input[type=file]").get(0).files[0];
+ <script>
+           // Get the modal
+                var modal = document.getElementById("myModal");
+
+                // Get the button that opens the modal
+                var btn = document.getElementById("myBtn");
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks the button, open the modal 
+                btn.onclick = function() {
+                modal.style.display = "block";
+                }
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                modal.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+                }
+    // function previewFile(input){
+    //     var file = $("input[type=file]").get(0).files[0];
  
-        if(file){
-            var reader = new FileReader();
+    //     if(file){
+    //         var reader = new FileReader();
  
-            reader.onload = function(){
-                $("#previewImg").attr("src", reader.result);
-            }
+    //         reader.onload = function(){
+    //             $("#previewImg").attr("src", reader.result);
+    //         }
  
-            reader.readAsDataURL(file);
-        }
-    }
-</script>
+    //         reader.readAsDataURL(file);
+    //     }
+    // }
+</script> 
+
 
 
