@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 // mongoose.connect('mongodb://localhost/codeail_development');
-mongoose.connect("mongodb+srv://Myuser:mypass@cluster0.soua4.mongodb.net/sample?retryWrites=true&w=majority",{
+mongoose.connect('mongodb+srv://Aadi421:Aadi@421@cluster0.tcbwg.mongodb.net/Cluster0?retryWrites=true&w=majority',{
   useUnifiedTopology: true,
   useNewUrlParser: true
 });
