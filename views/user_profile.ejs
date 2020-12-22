@@ -4,9 +4,10 @@
         <!-- <%if(user.id==profile_user.id){%>
              <img src="<%=user.avatar%>" alt="<%=user.name%>" width='100' id="previewImg">
         <%}%> -->
+       
                 <div class="profile-display-container">
                             
-                        
+                       
                         
                         
                         <span for="Name">Name</span><span><%= profile_user.name %></span>
@@ -17,7 +18,7 @@
                         <span for="Mobile Number">Mobile Number</span><span><%= profile_user.number %></span>
                         
                         <span><%if(user.id==profile_user.id){%>
-                              <button  id="myBtn">Update</button>
+                              <button  id="myBtn">Update Profile</button>
                               <%}%>
                         </span>
                             
@@ -47,7 +48,7 @@
 
                                     <br>
                                 <!-- <input type="file" name="avatar" placeholder="profile Picture" onchange="previewFile(this);"> -->
-                                <input type="submit" value="Update">
+                                <input type="submit" value="Submit">
 
                         </form>
                 </div>

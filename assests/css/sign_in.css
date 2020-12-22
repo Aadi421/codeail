@@ -1,5 +1,4 @@
 body {
-  background-color: #293c54;
   box-sizing: border-box;
 }
 
@@ -117,4 +116,32 @@ body .signin-container .signin-content .signin-image .signin-image-link {
 
 body .signin-container .signin-content .signin-image .signin-image-link:hover {
   color: blue;
+}
+
+@media only screen and (max-width: 600px) {
+  body .signin-container {
+    width: 80%;
+    position: relative;
+    top: 40px;
+    padding-bottom: 200px;
+  }
+  body .signin-container .signin-content {
+    width: 100%;
+  }
+  body .signin-container .signin-content .signin-form {
+    order: 1;
+    width: 100%;
+  }
+  body .signin-container .signin-content .signin-form .form-button {
+    position: relative;
+    left: 23%;
+  }
+  body .signin-container .signin-content .signin-image {
+    order: 2;
+    width: 90%;
+  }
+  body .signin-container .signin-content .signin-image .signin-image-link {
+    position: relative;
+    left: 65%;
+  }
 }

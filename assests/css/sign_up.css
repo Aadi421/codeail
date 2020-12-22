@@ -1,5 +1,4 @@
 body {
-  background-color: #293c54;
   box-sizing: border-box;
 }
 
@@ -102,4 +101,32 @@ body .signup-container .signup-content .signup-image .signup-image-link {
 
 body .signup-container .signup-content .signup-image .signup-image-link:hover {
   color: blue;
+}
+
+@media only screen and (max-width: 600px) {
+  body .signup-container {
+    width: 80%;
+    position: relative;
+    top: 40px;
+    padding-bottom: 200px;
+  }
+  body .signup-container .signup-content {
+    width: 100%;
+  }
+  body .signup-container .signup-content .signup-form {
+    order: 1;
+    width: 100%;
+  }
+  body .signup-container .signup-content .signup-form .form-button {
+    position: relative;
+    left: 23%;
+  }
+  body .signup-container .signup-content .signup-image {
+    order: 2;
+    width: 90%;
+  }
+  body .signup-container .signup-content .signup-image .signup-image-link {
+    position: relative;
+    left: 4%;
+  }
 }

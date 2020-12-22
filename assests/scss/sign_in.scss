@@ -1,5 +1,5 @@
 body {
-    background-color: #293c54;
+    // background-color: #293c54;
     box-sizing: border-box;
     .signin-container {
         padding: 20px;
@@ -103,4 +103,37 @@ body {
             }
         }
     }
+
+    @media only screen and (max-width: 600px) {
+        .signin-container{
+            width:80%;
+            position: relative;
+            top: 40px;
+            padding-bottom:200px;
+            
+            .signin-content{
+                width:100%;
+
+                .signin-form{
+                    order:1;
+                    width:100%;
+                    .form-button{
+                        position:relative;
+                        left:23%
+                    }
+                }
+                .signin-image{
+                     order:2;
+                      width:90%;
+                    .signin-image-link{
+                        position:relative;
+                        left:65%
+                    }
+                }
+                
+            }
+            
+        }
+
+    } 
 }

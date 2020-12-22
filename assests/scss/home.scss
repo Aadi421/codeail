@@ -85,3 +85,16 @@
             }
                 
 }
+@media only screen and (max-width: 600px) {
+        #home-container{
+            width:100%;
+            #feed-posts{
+             width: 80%;
+            }
+            #user-friends{
+                width: 15%
+            }
+        }
+        
+
+    } 

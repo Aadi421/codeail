@@ -9,3 +9,10 @@ body #layout-main {
   margin-bottom: 50px;
   background-color: #292a23;
 }
+
+@media only screen and (max-width: 600px) {
+  body #layout-main {
+    min-height: 80vh;
+    margin-bottom: 0px;
+  }
+}

@@ -7,7 +7,7 @@ body #profile-container {
 body #profile-container .profile-display-container {
   border: 2px dotted  black;
   margin: auto;
-  max-width: 70%;
+  max-width: 50%;
   background-color: snow;
   padding: 40px;
   display: grid;
@@ -64,4 +64,19 @@ body #profile-container .profile-update-container .close:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  body #profile-container {
+    position: relative !important;
+    top: 80px;
+  }
+  body #profile-container .profile-display-container {
+    width: 90%;
+  }
+  body #profile-container .profile-update-container {
+    width: 90%;
+    position: relative !important;
+    z-index: 12;
+  }
 }
