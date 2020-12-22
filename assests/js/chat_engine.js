@@ -60,7 +60,7 @@ class ChatEngine{
                 'html': data.message
             }));
 
-            newMessage.append($('<sub>', {
+            newMessage.append($('<p>', {
                 'html': data.user_name
             }));
 
