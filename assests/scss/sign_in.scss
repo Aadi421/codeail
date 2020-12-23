@@ -103,8 +103,7 @@ body {
             }
         }
     }
-
-    @media only screen and (max-width: 600px) {
+      @media only screen and (max-width: 600px) {
         .signin-container{
             width:80%;
             position: relative;
@@ -135,5 +134,6 @@ body {
             
         }
 
-    } 
+    }
+    
 }

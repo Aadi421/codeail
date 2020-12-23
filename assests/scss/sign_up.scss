@@ -113,9 +113,7 @@ body{
     }
 
 
-
-
-    @media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
         .signup-container{
             width:80%;
             position: relative;
@@ -134,7 +132,11 @@ body{
                 }
                 .signup-image{
                      order:2;
-                      width:90%;
+                      width:100%;
+                    // img{
+                    // width:100px;
+                    // height:200px;
+                    // }
                     .signup-image-link{
                         position:relative;
                         left:4%
@@ -145,5 +147,8 @@ body{
             
         }
 
-    } 
+} 
+
+    
 }
+
