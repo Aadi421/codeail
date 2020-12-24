@@ -113,9 +113,9 @@ body{
     }
 
 
-@media only screen and (max-width: 600px) {
+@media screen and (max-width: 576px) {
         .signup-container{
-            width:80%;
+            width:73%;
             position: relative;
             top: 40px;
             padding-bottom:200px;
@@ -126,21 +126,22 @@ body{
                     order:1;
                     width:100%;
                     .form-button{
-                        position:relative;
-                        left:23%
+                        padding: 5% 0 0 0;
+                        text-align:right;
                     }
                 }
                 .signup-image{
                      order:2;
                       width:100%;
-                    // img{
-                    // width:100px;
-                    // height:200px;
-                    // }
-                    .signup-image-link{
-                        position:relative;
-                        left:4%
+                    img{
+                       display:none;
                     }
+                    .signup-image-link{
+                       h4{
+                            text-align:left;
+                            padding:0 0 0 0;
+                        }
+                     }
                 }
                 
             }

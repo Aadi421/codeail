@@ -1,8 +1,9 @@
 #layout-header{
-    width:100vw;
+    width:100%;
     position:sticky;
     top:0;
     z-index:10;
+    
     nav{
         display: flex;
         justify-content: space-between;
@@ -21,6 +22,9 @@
         }
 
         .auth-links{
+            i{
+                display:none;
+            }
             ul{ list-style:none;
                 margin: 8% 10px;
                 display: flex;
@@ -46,12 +50,17 @@
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media screen and (max-width: 576px) {
         #layout-header{
             width:100%;
+            position:sticky;
+            top:0;
+            z-index:10;
             nav{
                 height:90px;
                 background: #2196f3;
+                margin:0;
+                padding:0;
                 
                 .mini-logo{
                     line-height:70px;
@@ -60,18 +69,55 @@
                     }
                 }
                 .auth-links{
-                    line-height:70px;
-                   ul li a{
+                    line-height:30px;
+
+                    i{
+                        display:block;
+                        position:fixed;
+                        right:30px;
+                        top:40px;
                         font-size:1.5rem;
                     }
+                   ul {
+                       
+                      
+                       transition:all;
+                            li
+                            {
+                                margin:0;
+                                padding:0;
+                                border:2px solid grey;
+                                background-color:snow;
+                                padding:0 5px;
+
+                                a{
+                                    font-size:1.1rem;
+                                    color:black;
+                                }
+                            }
+
+                   }
+                   ul{
+                       display:none;
+                   }
+
+                    
+
                 }
+                .auth-links:hover ul{
+                       display:flex;
+                       flex-direction:column;
+                       align-content:space-around;
+                       transform:translate(-40px,40px);
+                       
+                   }
+
+
             }
             
             
         }
-        
-
-    } 
+} 
 
 
     

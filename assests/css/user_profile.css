@@ -13,6 +13,7 @@ body #profile-container .profile-display-container {
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-gap: 10px;
+  word-wrap: break-word;
 }
 
 body #profile-container .profile-display-container label {
@@ -23,6 +24,23 @@ body #profile-container .profile-display-container label {
 
 body #profile-container .profile-display-container span {
   color: black;
+  word-wrap: break-word;
+}
+
+body #profile-container .profile-display-container #myBtn {
+  background-image: linear-gradient(to right, red, orange, yellow, red);
+  border: 2px solid orange;
+  margin-top: 5%;
+  font-size: 1rem;
+  width: 128px;
+  font-weight: bold;
+  color: black;
+  font-family: 'Lato', sans-serif;
+  transition: ease-in;
+}
+
+body #profile-container .profile-display-container #myBtn:hover {
+  background-image: linear-gradient(to left, red, orange, yellow, red);
 }
 
 body #profile-container .profile-update-container {
@@ -52,6 +70,20 @@ body #profile-container .profile-update-container .modal-content {
   width: 80%;
 }
 
+body #profile-container .profile-update-container .modal-content form input[type=submit] {
+  background-image: linear-gradient(to right, red, orange, yellow, red);
+  border: 2px solid orange;
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+  font-family: 'Lato', sans-serif;
+  transition: ease-in;
+}
+
+body #profile-container .profile-update-container .modal-content form input[type=submit]:hover {
+  background-image: linear-gradient(to left, red, orange, yellow, red);
+}
+
 body #profile-container .profile-update-container .close {
   color: #aaaaaa;
   float: right;
@@ -66,13 +98,15 @@ body #profile-container .profile-update-container .close:focus {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 600px) {
+@media screen and (max-width: 576px) {
   body #profile-container {
     position: relative !important;
     top: 80px;
+    width: 100%;
   }
   body #profile-container .profile-display-container {
-    width: 90%;
+    max-width: 100%;
+    margin: 0 5% 0 0;
   }
   body #profile-container .profile-update-container {
     width: 90%;

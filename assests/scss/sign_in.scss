@@ -103,9 +103,9 @@ body {
             }
         }
     }
-      @media only screen and (max-width: 600px) {
+      @media screen and (max-width: 576px) {
         .signin-container{
-            width:80%;
+            width:73%;
             position: relative;
             top: 40px;
             padding-bottom:200px;
@@ -117,16 +117,22 @@ body {
                     order:1;
                     width:100%;
                     .form-button{
-                        position:relative;
-                        left:23%
+                        padding: 5% 0 0 0;
+                        text-align:right
                     }
                 }
                 .signin-image{
                      order:2;
                       width:90%;
+
+
+                    img{
+                        display:none;
+                    }
                     .signin-image-link{
-                        position:relative;
-                        left:65%
+                        h4{
+                            text-align:right;
+                        }
                     }
                 }
                 

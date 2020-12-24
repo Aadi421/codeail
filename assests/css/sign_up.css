@@ -103,9 +103,9 @@ body .signup-container .signup-content .signup-image .signup-image-link:hover {
   color: blue;
 }
 
-@media only screen and (max-width: 600px) {
+@media screen and (max-width: 576px) {
   body .signup-container {
-    width: 80%;
+    width: 73%;
     position: relative;
     top: 40px;
     padding-bottom: 200px;
@@ -118,15 +118,18 @@ body .signup-container .signup-content .signup-image .signup-image-link:hover {
     width: 100%;
   }
   body .signup-container .signup-content .signup-form .form-button {
-    position: relative;
-    left: 23%;
+    padding: 5% 0 0 0;
+    text-align: right;
   }
   body .signup-container .signup-content .signup-image {
     order: 2;
     width: 100%;
   }
-  body .signup-container .signup-content .signup-image .signup-image-link {
-    position: relative;
-    left: 4%;
+  body .signup-container .signup-content .signup-image img {
+    display: none;
+  }
+  body .signup-container .signup-content .signup-image .signup-image-link h4 {
+    text-align: left;
+    padding: 0 0 0 0;
   }
 }

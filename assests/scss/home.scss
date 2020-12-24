@@ -76,6 +76,7 @@
     h4{
         font-size:1.5rem;
         font-weight:bold;
+        color:#ffa0a0;
     }
     .fa-thumbs-up{
             color:blue;
@@ -85,14 +86,17 @@
             }
             
 }
-@media only screen and (max-width: 600px) {
+@media screen and (max-width: 576px) {
         #home-container{
             width:100%;
+            display:flex;
+            align-content:row;
+            justify-content:space-around;
             #feed-posts{
-             width: 80%;
+             width: 70%;
             }
             #user-friends{
-                width: 15%
+                width: 20%
             }
         }
         

@@ -118,9 +118,9 @@ body .signin-container .signin-content .signin-image .signin-image-link:hover {
   color: blue;
 }
 
-@media only screen and (max-width: 600px) {
+@media screen and (max-width: 576px) {
   body .signin-container {
-    width: 80%;
+    width: 73%;
     position: relative;
     top: 40px;
     padding-bottom: 200px;
@@ -133,15 +133,17 @@ body .signin-container .signin-content .signin-image .signin-image-link:hover {
     width: 100%;
   }
   body .signin-container .signin-content .signin-form .form-button {
-    position: relative;
-    left: 23%;
+    padding: 5% 0 0 0;
+    text-align: right;
   }
   body .signin-container .signin-content .signin-image {
     order: 2;
     width: 90%;
   }
-  body .signin-container .signin-content .signin-image .signin-image-link {
-    position: relative;
-    left: 65%;
+  body .signin-container .signin-content .signin-image img {
+    display: none;
+  }
+  body .signin-container .signin-content .signin-image .signin-image-link h4 {
+    text-align: right;
   }
 }
